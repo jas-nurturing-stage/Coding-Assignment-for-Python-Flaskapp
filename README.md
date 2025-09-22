@@ -98,14 +98,12 @@ Build the Docker image:
 ```bash
 docker image build --no-cache -t securelooper/sagar-flask-app:latest .
 ```
-![docker build](images/docker-build.png)
-
+!<img width="1106" height="747" alt="docker-build" src="https://github.com/user-attachments/assets/3e6f3b25-67f8-4a8b-9321-a2f391ee8366" />
 Run the container:
 ```bash
 docker container run -d -p 5000:5000 --name sagar-flask-app flask-app:latest
 ```
-![docker run](images/docker-run.png)
-
+!<img width="811" height="290" alt="docker-run" src="https://github.com/user-attachments/assets/46618bbe-54f5-4758-bbdc-c552ae08dfee" />
 ---
 ## 🛠 Terraform Infrastructure Provisioning
 Terraform is used to provision AWS infrastructure for the application, including VPC, ECR, and EKS.
@@ -242,7 +240,7 @@ resource "aws_route_table_association" "public" {
   route_table_id = aws_route_table.public.id
 }
 ```
-![VPC](images/vpc.png)
+!<img width="1656" height="325" alt="vpc" src="https://github.com/user-attachments/assets/b8df190f-334b-4426-8428-f69742054c4f" />
 
 ###  ECR
 File: `terraform/ecr.tf`
@@ -289,9 +287,9 @@ resource "aws_ecr_lifecycle_policy" "repo_policy" {
 }
 ```
 
-![ecr](images/ecr.png)
-![ecr](images/ecr-repo-list.png)
+!<img width="1903" height="300" alt="ecr-repo" src="https://github.com/user-attachments/assets/b7ea1c44-48e6-4943-bb5c-a7894d8d4dd1" />
 
+!<img width="1903" height="467" alt="ecr-repo-list" src="https://github.com/user-attachments/assets/67c5e7e4-0e1b-4e3f-97a9-15106d8b0651" />
 ###  EKS
 File: `terraform/eks.tf`
 ```
@@ -391,8 +389,10 @@ resource "aws_eks_node_group" "nodes" {
   ]
 }
 ```
-![eks](images/eks-list.png)
-![eks](images/eks-cluster-detail.png)
+!<img width="1920" height="1603" alt="eks-cluster" src="https://github.com/user-attachments/assets/b0f90adc-d586-4f38-896c-9be628a63db0" />
+!<img width="1920" height="1603" alt="eks-cluster-details" src="https://github.com/user-attachments/assets/003bd045-1e4a-4dc5-8198-ec0a2bcf9a03" />
+!<img width="1915" height="377" alt="eks-upgrdation from V1 30 to v-1 31" src="https://github.com/user-attachments/assets/1cf64672-3404-40e1-82a4-d6f87f885840" />
+!<img width="1901" height="345" alt="upgraded eks cluster version from 1 31 to 1 32" src="https://github.com/user-attachments/assets/def5cb0b-b805-4639-9fdb-038afd9aeddf" />
 
 ###  EKS
 File: `terraform/outputs.tf`
@@ -431,27 +431,27 @@ output "configure_kubectl" {
 ```
 terraform init
 ```
-![terraform init](images/terraform-init.png)
+!<img width="770" height="463" alt="terraform-init" src="https://github.com/user-attachments/assets/c15b90c5-404c-4b6f-ad22-680f93e32800" />
 
 **Format and Validate:**
 ```
 terraform fmt
 terraform validate
 ```
-![terraform fmt](images/terraform-fmt.png)
-![terraform validate](images/terraform-validate.png)
+!<img width="622" height="41" alt="terraform-fmt" src="https://github.com/user-attachments/assets/b02e5d0f-89d0-40f2-b1a5-f528a15c8222" />
+!<img width="692" height="67" alt="terraform-validate" src="https://github.com/user-attachments/assets/1aa6c901-f34b-48ee-9b25-fdaa1860496a" />
 
 **Preview Changes:**
 ```
 terraform plan
 ```
-![terraform plan](images/terraform-plan.png)
+!<img width="927" height="705" alt="terraform-plan" src="https://github.com/user-attachments/assets/92d7d901-7bfa-4ba0-9911-fbecb27126a4" />
 
 **Apply Configuration:**
 ```
 terraform apply
 ```
-![terraform apply](images/terraform-apply.png)
+!<img width="956" height="727" alt="terraform-applied" src="https://github.com/user-attachments/assets/04cad95b-ac4d-41c6-8b06-e81844346d31" />
 
 **Destroy Infrastructure** (when needed):
 You can use destroy
@@ -572,7 +572,6 @@ kubectl get svc
 - This configuration uses a declarative pipeline stored in the `main` branch under the file `Jenkinsfile`.
 - Ensure that the **GitHub webhook** is properly configured in your GitHub repository settings to trigger Jenkins jobs automatically.
 
-![Jenkins Configuration](./images/flask-cicd-configration.png)
 ---
 
 ### 📄 Jenkinsfile
@@ -656,22 +655,23 @@ pipeline {
 
 ### 🚀 Pipeline Overview
 
-![Pipeline Overview](./images/pipline-overview.png)
+!<img width="1908" height="513" alt="jenkins-cicd" src="https://github.com/user-attachments/assets/b9d9ca74-9213-4ca2-a5a1-664990510355" />
+!<img width="1920" height="8992" alt="jenkins-output" src="https://github.com/user-attachments/assets/043b66e0-5cb4-4865-a0f3-ad51e790b8d0" />
 
 ##### EKS deployment
-![eks deployment](images/eks-deployment.png)
+!<img width="1920" height="1603" alt="eks-cluster" src="https://github.com/user-attachments/assets/d13eff11-ac65-4ac2-9949-12a65d325cca" />
+
 ##### EKS pod
-![eks pod](images/eks-pod.png)
+!<img width="1920" height="1472" alt="eks-pods" src="https://github.com/user-attachments/assets/1f0b39ed-18f5-4342-965d-0a046de585e1" />
 
 ##### EKS service
-![eks service](images/eks-service.png)
+!<img width="1893" height="738" alt="eks-services" src="https://github.com/user-attachments/assets/c63973c2-267a-4161-871c-c0e9946a238e" />
 
 ##### EKS Load Balancer
-![Load Balancer](images/load-balancer.png)
+!<img width="1896" height="755" alt="loadbalancer" src="https://github.com/user-attachments/assets/e4e09e62-a2e3-461c-8b7e-843f8588e97a" />
 
 ### **🌍 Production App Live:**
-![live website](images/live-website.png)
-
+!<img width="1108" height="373" alt="livewebsite " src="https://github.com/user-attachments/assets/2b107858-52ab-4404-bace-311f9f9455bd" />
 
 ---
 ## 📜 Project Information
@@ -684,13 +684,13 @@ This project is released under the MIT License, granting you the freedom to:
 
 ## 📞 Contact
 
-📧 Email: [Email Me](securelooper@gmail.com
+📧 Email: [Email Me](sk.jasminesaheb@gmail.com
 )
-🔗 LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/sagar-93-patel)  
-🐙 GitHub: [GitHub Profile](https://github.com/psagar-dev)  
+🔗 LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/jasminesaheb-shaik-0596a0247/)  
+🐙 GitHub: [GitHub Profile](https://github.com/jas-nurturing-stage)  
 
 ---
 
 <div align="center">
-  <p>Built with ❤️ by Sagar Patel</p>
+  <p>Built with ❤️ by Jasmine saheb</p>
 </div>
