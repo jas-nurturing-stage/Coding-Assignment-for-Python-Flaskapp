@@ -458,8 +458,7 @@ You can use destroy
 ```
 terraform destroy
 ```
-![terraform destroy](images/terraform-destroy.png)
-
+!<img width="1162" height="651" alt="image" src="https://github.com/user-attachments/assets/fab23dd5-c41b-4ae4-83ed-5e1b2d48e9b7" />
 ---
 ### ☸️ Steps to Deploy an Application on Kubernetes
 
