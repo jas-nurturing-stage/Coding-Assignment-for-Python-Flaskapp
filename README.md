@@ -96,12 +96,12 @@ CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
 
 Build the Docker image:
 ```bash
-docker image build --no-cache -t securelooper/sagar-flask-app:latest .
+docker image build --no-cache -t docjas143/jasmine-flask-app:latest .
 ```
 !<img width="1106" height="747" alt="docker-build" src="https://github.com/user-attachments/assets/3e6f3b25-67f8-4a8b-9321-a2f391ee8366" />
 Run the container:
 ```bash
-docker container run -d -p 5000:5000 --name sagar-flask-app flask-app:latest
+docker container run -d -p 5000:5000 --name jasmine-flask-app flask-app:latest
 ```
 !<img width="811" height="290" alt="docker-run" src="https://github.com/user-attachments/assets/46618bbe-54f5-4758-bbdc-c552ae08dfee" />
 ---
